@@ -91,7 +91,18 @@ void Q010(void) {
 	printf("Enter an integer: ");
 	scanf_s("%d", &x);
 	printf("You entered: %d\n", x);
+}
 
+void Q011(void) {
+	//[Warmup] Read a word into buf[16] safely.
+	char biff[16];
+	scanf_s("%15s", biff, (unsigned)_countof(biff));
+}
+
+void Q012(void) {
+	//[Warmup] Print n with width 6.
+	char n[16] = "nnnnn";
+	printf("%6d\n", n);
 }
 
 
