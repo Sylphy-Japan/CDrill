@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 
 void Q001(void) {
 	//[Warmup] Print numbers 1..10 (one line).
@@ -42,6 +42,7 @@ void Q005(void) {
 	{
 		printf("%d ", i);
 	}
+	printf("\n");
 }
 
 void Q006(void) {
@@ -77,8 +78,8 @@ void Q008(void) {
 
 void Q009(void) {
 	//[Warmup] Print multiplication table row for n (1..9).
-	for (int i = 1; i <= 10; i++){
-		for (int j = 1; j <= 10; j++) {
+	for (int i = 1; i <= 9; i++) {
+		for (int j = 1; j <= 9; j++) {
 			printf("%3d ", i * j);
 		}
 		printf("\n");
@@ -96,37 +97,84 @@ void Q010(void) {
 void Q011(void) {
 	//[Warmup] Read a word into buf[16] safely.
 	char biff[16];
-	scanf_s("%15s", biff, (unsigned)_countof(biff));
+	//if (scanf("%15s", biff) != 1) { puts("input error"); }
 }
 
 void Q012(void) {
 	//[Warmup] Print n with width 6.
-	char n[16] = "nnnnn";
+	int n = 42;
 	printf("%6d\n", n);
 }
 
+void Q013(void) {
+	//[Warmup] Print x with 3 fractional digits.
+	double x = 3.14159;
+	printf("%.3f\n", x);
+}
+
+void Q014(void) {
+	//[Warmup] Print hex of u (uppercase).
+	unsigned int u = 3735928559; // 0xDEADBEEF
+	printf("%X\n", u);
+}
+
+void Q015() {
+	//[Warmup] Print binary of byte b.
+	unsigned char b = 0xB2; // 178, 2進数 10110010
+	for (int i = 7; i >= 0; i--)
+		putchar((b >> i & 1) ? '1' : '0');
+	putchar('\n');
+}
+
+void Q016(void) {
+	//[Cond] Print sign of x: 'pos'/'neg'/'zero'.
+	int x = 10;
+	if (x > 0) puts("pos"); 
+	else if (x < 0) puts("neg");
+	else puts("zero");
+}
+
+void Q017(void) {
+	//[Cond] Max of a,b using ternary assign to m.
+	int a = 5, b = 10;
+	int m = (a > b ? a : b);
+	
+}
+
+
 
 int main(void) {
-	Q001();
+	//Q001();
 
-	Q002();
+	//Q002();
 
-	Q003();
+	//Q003();
 
-	Q004();
+	//Q004();
 
-	Q005();
+	//Q005();
 
-	Q006();
+	//Q006();
 
-	Q007();
+	//Q007();
 
-	Q008();
+	//Q008();
 
-	Q009();
+	//Q009();
 
-	Q010();
+	//Q010();
 
+	//Q011();
+
+	//Q012();
+
+	//Q013();
+
+	//Q014();
+
+	//Q015();
+
+	//Q016();
 
 	return 0;
 }
