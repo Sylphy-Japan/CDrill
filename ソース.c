@@ -126,10 +126,17 @@ void Q015() {
 	putchar('\n');
 }
 
+void Q015_1() {
+	//次のコードを完成させて、文字 'A' の文字としての出力数値（ASCIIコード）としての出力を両方表示せよ。
+	char A = 'A';
+	putchar(A); // 文字としての出力
+	printf(" %d\n", A); // ASCIIコードとしての出力
+}
+
 void Q016(void) {
 	//[Cond] Print sign of x: 'pos'/'neg'/'zero'.
 	int x = 10;
-	if (x > 0) puts("pos"); 
+	if (x > 0) puts("pos");
 	else if (x < 0) puts("neg");
 	else puts("zero");
 }
@@ -138,10 +145,66 @@ void Q017(void) {
 	//[Cond] Max of a,b using ternary assign to m.
 	int a = 5, b = 10;
 	int m = (a > b ? a : b);
-	
+
 }
 
+void Q018() {
+	//[Cond] Min of a,b to m.
+	int a = 5, b = 10;
+	int m = (a < b ? a : b);
+}
 
+void Q019() {
+	//[Cond] Leap year check y -> print YES/NO.
+	printf("Enter year: ");
+	int y = 0;
+	scanf_s("%d", &y);
+	puts((y % 400 == 0) || ((y % 4 == 0) && (y % 100 != 0)) ? "YES" : "NO");
+}
+
+void Q020() {
+	//[Cond] In range: print YES if 10<=x&&x<=20.
+	int x = 10;
+	puts(x >= 10 && x <= 20 ? "YES" : "NO");
+}
+
+void Q021() {
+	//[Cond] Grade mapping: 90+A,80+B,70+C,60+D,else F.
+	int s = 85; // score
+	if (s >= 90) puts("A");
+	else if (s >= 80) puts("B");
+	else if (s >= 70) puts("C");
+	else if (s >= 60) puts("D");
+	else puts("F");
+}
+
+void Q022() {
+	//[Cond] Absolute value of n into a.
+	//int a = (a < 0 ? -a : a);
+}
+
+void Q023() {
+	//[Cond] FizzBuzz for i=1..n (print each).
+	int n = 100;
+	for (int i = 1; i <= n; i++)
+	{
+		if (i % 15 == 0) puts("FizzBuzz");
+		else if (i % 3 == 0) puts("Fizz");
+		else if (i % 5 == 0) puts("Buzz");
+		else printf("%d\n", i);
+	}
+}
+
+void Q024() {
+	//[Cond] Count digits of positive n to d.
+	int n = 12345;
+	int d = 0;
+	while (n) {
+		d++;
+		n /= 10;
+	}
+	printf("Number of digits: %d\n", d);
+}
 
 int main(void) {
 	//Q001();
@@ -174,7 +237,15 @@ int main(void) {
 
 	//Q015();
 
+	//Q015_1();
+
 	//Q016();
+
+	//Q020();
+
+	//Q021();
+
+	Q024();
 
 	return 0;
 }
