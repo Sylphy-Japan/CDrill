@@ -206,6 +206,26 @@ void Q024() {
 	printf("Number of digits: %d\n", d);
 }
 
+
+void Q025() {
+//[Cond] Reverse decimal digits of n to r.
+	int n = 12345;
+	int r = 0; 
+	while (n) {
+		r = r * 10 + n % 10; n /= 10; 
+	}
+}
+
+void Q026() {
+	//[Cond] Count set bits in unsigned x to c.
+	int c = 0;
+	int x = 0b10110010; // 178
+	while (x) { 
+		c += x & 1; x >>= 1;
+	}
+}
+
+
 int main(void) {
 	//Q001();
 
