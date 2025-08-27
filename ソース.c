@@ -225,6 +225,18 @@ void Q026() {
 	}
 }
 
+void Q026_2() {
+	//[Cond] Count set bits in unsigned x to c.
+	int c = 0;
+	int x = 0b1101;
+
+	while (x)
+	{
+		x &= (x - 1);
+		c++;
+	}
+}
+
 
 int main(void) {
 	//Q001();
