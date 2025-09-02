@@ -208,11 +208,11 @@ void Q024() {
 
 
 void Q025() {
-//[Cond] Reverse decimal digits of n to r.
+	//[Cond] Reverse decimal digits of n to r.
 	int n = 12345;
-	int r = 0; 
+	int r = 0;
 	while (n) {
-		r = r * 10 + n % 10; n /= 10; 
+		r = r * 10 + n % 10; n /= 10;
 	}
 }
 
@@ -220,7 +220,7 @@ void Q026() {
 	//[Cond] Count set bits in unsigned x to c.
 	int c = 0;
 	int x = 0b10110010; // 178
-	while (x) { 
+	while (x) {
 		c += x & 1; x >>= 1;
 	}
 }
@@ -237,6 +237,26 @@ void Q026_2() {
 	}
 }
 
+
+void Q027() {
+	//[Cond] Count set bits in unsigned x to c.
+	int x = 3;
+	int c = 0;
+	while (x) {
+		c += x & 1;
+		x >> 1;
+	}
+}
+
+void Q028() {
+	//[Cond] Power-of-two check for unsigned x (print YES/NO).
+	unsigned int x = 16;
+	if (x > 0 && (x & (x - 1)) == 0)
+		printf("YES\n");
+	else
+		printf("NO\n");
+	return 0;
+}
 
 int main(void) {
 	//Q001();
