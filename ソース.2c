@@ -1,0 +1,52 @@
+﻿#include <stdio.h>
+#include <string.h>
+
+#define NLine 129 // 128文字 + 改行コード
+
+struct JobData {
+    int count;    // 測定回数
+    double average; // 測定結果の合計
+};
+
+struct JobData analizeLogFile(char* fileName) {
+    // ファイルIO、行を保存するバッファー、測定結果の保存領域の初期化
+    FILE *fp;
+    char line[NLine];
+    struct JobData data = {0, 0.0};
+
+    // (問題13-１)ログファイルを開いて、ファイルオープンエラーの検知
+    fp = fopen(fileName, "r");
+    if (fp == NULL) {
+        perror("Error opening file");
+        return data; // エラー時は初期化されたdataを返す
+    }
+
+    // (問題13-2)ファイルを1行ずつ最後まで読み込む
+    while (fgets(line, sizeof(line), fp) != NULL)
+    {
+        // (問題１３-3) “DATA “で始まる行があれば
+    if (strncmp(line, "DATA ", 5) == 0)
+    {
+
+        {
+            double value;
+            // (問題１３-4)“DATA“以降の文字列をdoubleに変換し、回数と合計の計算
+            if (sscanf(line + 5, "%lf", &value) == 1) {
+                data.count++;
+                data.average += value;
+            }
+            
+        }
+    }
+
+    // (問題１３-5)ファイルIOを閉じる
+    fclose(fp);
+    }
+
+    // (問題１３-6)測定結果があれば、合計を平均値に直す
+    if (data.count > 0) {
+        data.average /= data.count;
+    }
+
+    return data;
+}
