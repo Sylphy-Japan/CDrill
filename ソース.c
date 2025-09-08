@@ -258,6 +258,31 @@ void Q028() {
 	return 0;
 }
 
+void Q029()
+{
+//[Cond] Power-of-two check for unsigned x (print YES/NO).
+int x = 16;
+puts(x && !(x & (x - 1)) ? "YES" : "NO")
+}
+
+//[Func] Define int square(int x).
+int Q030 (int x)
+{
+  return x * x;
+}
+
+//[Func] Define int cube(int x).
+int Q031cube(int x)
+{
+   return x*x*x; 
+}
+
+//[Func] Define int abs_i(int x).
+int Q032abs(int x)
+{
+	return x > 0 ? x:-x;
+}
+
 int main(void) {
 	//Q001();
 
