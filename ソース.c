@@ -283,6 +283,58 @@ int Q032abs(int x)
 	return x > 0 ? x:-x;
 }
 
+//[Func] Define long fact(int n) iterative.
+long Q033(long x)
+{
+	long ans = 0;
+    while(x >= 1)
+	{
+		ans *= x;
+		x--;
+	}
+	return ans;
+}
+
+//[Func] Define int fib(int n) iterative.
+int Q034(int n)
+{
+	if(n = 0) return 0;
+	if(n = 1) return 1;
+
+	int result = 0;
+	int a = 0, d = 1;
+	for(int i = 0; i <= n; i++)
+	{
+		result = a + d;
+		a = d;
+		d = result;
+	}
+	return result;	
+}
+
+//[Func] Define int gcd(int a,int b) (Euclid).
+int Q035gcd(int a, int b)
+{
+    while (a != b) {
+        if (a > b)
+            a = a - b;
+        else
+            b = b - a;
+    }
+    return a;
+}
+
+int gcd(int a, int b)
+{
+    while (b != 0) {
+        int tmp = a % b;
+        a = b;
+        b = tmp;
+    }
+    return a;
+}
+
+
 int main(void) {
 	//Q001();
 
