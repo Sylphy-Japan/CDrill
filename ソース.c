@@ -334,6 +334,7 @@ int gcd(int a, int b)
     return a;
 }
 
+//
 
 int main(void) {
 	//Q001();
